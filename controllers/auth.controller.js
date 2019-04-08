@@ -15,10 +15,21 @@ exports.registerPatient = (req, res) => {
 exports.loginPatient = (req, res) => {
   const { email, password } = req.body;
 
-  Patient.find({ email, password}, (err, patient) => {
+  Patient.findOne({ email, password}, (err, patient) => {
     if(err)
       return res.status(400).json(err);
 
     return res.status(201).json(patient);
+  }); 
+}
+
+exports.loginNurse = (req, res) => {
+  const { email, password } = req.body;
+
+  Nurse.findOne({ email, password}, (err, nurse) => {
+    if(err)
+      return res.status(400).json(err);
+
+    return res.status(201).json(nurse);
   }); 
 }
