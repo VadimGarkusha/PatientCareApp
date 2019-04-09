@@ -92,3 +92,37 @@ GET
     }
 ]
 ```
+
+## Create Tip
+
+### URL
+
+`nurse/create-tip`
+
+### Request
+
+POST
+
+```javascript
+{
+	"title": "Test Title",
+	"body": "Lorem Ipsum",
+	"patient_id": "5cabe65e5b14526573b6cc2b",
+	"nurse_id": "5cabea81e8a0b816e5d2e91b"
+}
+```
+
+### Response
+
+```javascript
+{
+    "_id": "5cabef056d8e2d3ea36ed84c",
+    "title": "Test Title",
+    "body": "Lorem Ipsum",
+    "patient_id": "5cabe65e5b14526573b6cc2b",
+    "nurse_id": "5cabea81e8a0b816e5d2e91b",
+    "createdAt": "2019-04-09T01:01:57.414Z",
+    "updatedAt": "2019-04-09T01:01:57.414Z",
+    "__v": 0
+}
+```
