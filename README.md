@@ -41,7 +41,7 @@ POST
 
 ### Request
 
-GET
+POST
 
 ```javascript
 {
@@ -70,6 +70,12 @@ GET
 ### URL
 
 `nurse/patient-register`
+
+### Request
+
+GET
+
+### Response
 
 ```javascript
 [
