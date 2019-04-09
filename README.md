@@ -12,7 +12,7 @@ POST
 ```javascript
 {
 	email,
-  password
+  	password
 }
 ```
 
@@ -29,4 +29,4 @@ POST
     "updatedAt": "2019-04-09T00:25:02.850Z",
     "__v": 0
 }
-    ```
+
