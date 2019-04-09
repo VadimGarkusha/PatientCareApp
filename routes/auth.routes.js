@@ -1,9 +1,9 @@
 const express = require('express');
 const authController = require('../controllers/auth.controller');
 
-const adminUserRouter = express.Router();
+const authRouter = express.Router();
 
-adminUserRouter
+authRouter
   .post('/patient-login', (req, res) => {
     authController.loginPatient(req, res);
   }).post('/nurse-login', (req, res) => {
@@ -12,4 +12,4 @@ adminUserRouter
     authController.registerPatient(req, res);
   });
 
-module.exports = adminUserRouter;
+module.exports = authRouter;
