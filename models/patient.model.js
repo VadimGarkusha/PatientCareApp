@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
 
@@ -21,6 +20,10 @@ const PatientModel = new Schema(
       bodyTemperature: Number,
       heartRate: Number,
       bloodPressure: Number
+    }],
+    dailyInfo: [{
+      title: String,
+      body: String
     }]
   },
   {

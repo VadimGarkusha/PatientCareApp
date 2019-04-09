@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const colors = require('colors');
 const connectDb = require('./dbConnection');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index.routes');
 
 const app = express();
 const port = 8080;
