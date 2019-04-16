@@ -1,4 +1,5 @@
 const Patient = require('../models/patient.model');
+const Nurse = require('../models/nurse.model');
 const Tip = require('../models/tip.model');
 
 exports.getPatients = (req, res) => {
@@ -21,3 +22,36 @@ exports.createTip = (req, res) => {
   });
 }
 
+exports.getNurseByEmail = (req, res) => {
+  const {email} = req.query;
+
+  Nurse.findOne({ email }, (err, nurse) => {
+    if(err)
+      return res.status(400).json(err);
+
+    return res.status(201).json(nurse);
+  }); 
+}
+
+exports.addClinicalSigns = async (req, res) => {
+  const { email, bodyTemperature, heartRate, bloodPressure } = req.body;
+
+  const patient = await Patient.findOne({email}, (err, patient) => {
+    if(err)
+      return res.json(err);
+  });
+
+
+  patient.clinicalVisits.push({
+    bodyTemperature,
+    heartRate,
+    bloodPressure
+  });
+
+  patient.save((error, pat) => {
+    if(error)
+      return res.json(error);
+
+    return res.json({success: true});
+  })
+}
