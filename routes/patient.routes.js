@@ -11,6 +11,8 @@ patientRouter
   patientController.createAlert(req, res);
 }).get('/tips', (req, res) => {
   patientController.getTips(req, res);
+}).post('/dailyInfo', (req, res) => {
+  patientController.addDailyInfo(req, res);
 });
 
 module.exports = patientRouter;

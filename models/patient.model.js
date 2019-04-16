@@ -23,7 +23,11 @@ const PatientModel = new Schema(
     }],
     dailyInfo: [{
       title: String,
-      body: String
+      body: String,
+      created_at: {
+        type: Date,
+        default: new Date()
+      }
     }]
   },
   {
