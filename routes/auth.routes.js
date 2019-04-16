@@ -4,9 +4,9 @@ const authController = require('../controllers/auth.controller');
 const authRouter = express.Router();
 
 authRouter
-  .post('/patient-login', (req, res) => {
+  .get('/patient-login', (req, res) => {
     authController.loginPatient(req, res);
-  }).post('/nurse-login', (req, res) => {
+  }).get('/nurse-login', (req, res) => {
     authController.loginNurse(req, res);
   }).post('/patient-register', (req, res) => {
     authController.registerPatient(req, res);

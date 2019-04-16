@@ -13,7 +13,7 @@ exports.registerPatient = (req, res) => {
 }
 
 exports.loginPatient = (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.query;
 
   Patient.findOne({ email, password}, (err, patient) => {
     if(err)
@@ -24,7 +24,7 @@ exports.loginPatient = (req, res) => {
 }
 
 exports.loginNurse = (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.query;
 
   Nurse.findOne({ email, password}, (err, nurse) => {
     if(err)
