@@ -10,6 +10,8 @@ nurseRouter
     nurseController.getNurseByEmail(req, res);
   }).post('/clinical-signs', (req, res) => {
     nurseController.addClinicalSigns(req, res);
+  }).get('/alerts', (req, res) => {
+    nurseController.getAlerts(req, res);
   });
 
 module.exports = nurseRouter;

@@ -1,6 +1,7 @@
 const Patient = require('../models/patient.model');
 const Nurse = require('../models/nurse.model');
 const Tip = require('../models/tip.model');
+const Alert = require('../models/alert.model');
 
 exports.getPatients = (req, res) => {
   Patient.find((err, patients) => {
@@ -53,5 +54,14 @@ exports.addClinicalSigns = async (req, res) => {
       return res.json(error);
 
     return res.json({success: true});
+  })
+}
+
+exports.getAlerts = (req, res) => {
+  Alert.find((err, alerts) => {
+    if(err)
+      return res.json(err);
+
+    return res.json(alerts);
   })
 }
