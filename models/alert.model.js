@@ -6,7 +6,7 @@ const AlertModel = new Schema(
   {
     title: String,
     body: String,
-    user_id: { type: Schema.Types.ObjectId, ref: 'patients' }
+    patient_id: { type: Schema.Types.ObjectId, ref: 'patients' }
   },
   {
     timestamps: true
