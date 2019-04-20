@@ -4,7 +4,9 @@ const Tip = require('../models/tip.model');
 const Alert = require('../models/alert.model');
 
 exports.getPatients = (req, res) => {
-  Patient.find((err, patients) => {
+  const {id} = req.query;
+
+  Patient.find((id) ? {_id: id} : null,(err, patients) => {
     if (err)
       return res.json(err);
 
