@@ -43,12 +43,14 @@ exports.addDailyInfo = async (req, res) => {
 exports.checkSymptoms = function (req, res) {
 
   const {query} = req;
+  console.log(query);
   const symptoms = []
   for (var prop in query) {
-    if (query.hasOwnProperty(prop)) {
-      symptoms.push(query[prop]);
+    if (query.hasOwnProperty(prop) && query[prop] === 'true') {
+      symptoms.push(prop);
     }
   }
+  console.log(symptoms)
 
   var checkForAllergy = ["Sneezing", "Itching", "Sore Throat"];
   var checkForFlu = ["Fever", "Cough", "Inactivity", "Sore Throat"];
@@ -61,7 +63,7 @@ exports.checkSymptoms = function (req, res) {
   const checkForDesease = (arr, diseaseName) => {
     let counter = 0;
     arr.forEach((el, i) => {
-      if (symptoms.indexOf(el) > -1)
+      if (symptoms.indexOf(el.toLowerCase()) > -1)
         counter++;
     });
 
