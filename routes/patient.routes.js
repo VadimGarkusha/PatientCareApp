@@ -13,6 +13,8 @@ patientRouter
   patientController.getTips(req, res);
 }).post('/dailyInfo', (req, res) => {
   patientController.addDailyInfo(req, res);
+}).post('/check-symptoms', (req, res) => {
+  patientController.checkSymptoms(req, res);
 });
 
 module.exports = patientRouter;
